@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Dog = require('./models/dogs'); // Make sure this path is correct
+//const Dog = require('./models/dogs'); // Make sure this path is correct
 
 const app = express();
 app.use(express.json());
