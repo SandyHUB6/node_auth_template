@@ -4,22 +4,6 @@ const dbConnect = require('./config/dbConnect');
 const authRoutes = require("./routes/authRoutes"); 
 const userRoutes = require("./routes/userRoutes"); 
 
-const WebSocket = require('ws');
-
-// Create a WebSocket server completely detached from the HTTP server.
-const wss = new WebSocket.Server({ port: 8181 });
-
-wss.on('connection', function connection(ws) {
-    console.log("WS connection arrived");
-    ws.on('message', function incoming(message) {
-        console.log('received: %s', message);
-    });
-
-    ws.send('this is a message');
-});
-
-
-
 dbConnect();
 
 const app = express();
